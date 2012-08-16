@@ -67,8 +67,8 @@ table_name = 't_repolist'
 init_database()
  
 # login github
-name = 'gongzhq'
-password = 'gzq2002'
+name = 'feiying'
+password = 'feiying586878'
 g = Github(name, password)
 repos = g.get_user().get_repos()
 for repo in repos:
@@ -76,18 +76,18 @@ for repo in repos:
     #print "# fork num: ", repo.forks
     forks = repo.get_forks()
     for fork in forks:
-        #print "# clone url: ", fork.clone_url
+        #print "# ssh url: ", fork.ssh_url
         #print "# updated_at: ", fork.updated_at
         #print "# email: ", fork.owner.email
-        if test_rec_exist(fork.clone_url):
+        if test_rec_exist(fork.ssh_url):
             # compare the date
-            if update_time_is_changed(fork.clone_url, fork.updated_at):
-            	update_func(fork.clone_url, fork.updated_at)
-            	print "###### fetch code from site: '%s'" % fork.clone_url
+            if update_time_is_changed(fork.ssh_url, fork.updated_at):
+            	update_func(fork.ssh_url, fork.updated_at)
+            	print "###### fetch code from site: '%s'" % fork.ssh_url
             else:
             	print "### update time is not changed."
         else:          
-            insert_func(fork.clone_url, fork.updated_at)
-            print "###### fetch code from site: '%s'" % fork.clone_url
+            insert_func(fork.ssh_url, fork.updated_at)
+            print "###### fetch code from site: '%s'" % fork.ssh_url
 
 c.close()

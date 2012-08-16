@@ -4,8 +4,8 @@ import os
 import shutil
 from github import Github
 
-name = 'gongzhq'
-password = 'gzq2002'
+name = 'feiying'
+password = 'feiying586878'
 g = Github(name, password)
 
 
@@ -19,7 +19,7 @@ if os.path.exists(dest_dir):
 
 repo = g.get_user().create_repo(pkg_name)
 print "### git clone init repo '%s'" % pkg_name 
-cmd_clone = "git clone %s %s" % (repo.clone_url, pkg_name)
+cmd_clone = "git clone %s %s" % (repo.ssh_url, pkg_name)
 os.system(cmd_clone)
 
 if os.path.exists(dest_dir):
@@ -48,5 +48,5 @@ os.system(cmd_commit)
 
 # git push 
 os.chdir(dest_dir)
-cmd_push= "git push"
+cmd_push= "git push -u origin master"
 os.system(cmd_push)

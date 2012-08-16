@@ -48,5 +48,5 @@ os.system(cmd_commit)
 
 # git push 
 os.chdir(dest_dir)
-cmd_push= "git push -u origin master"
+cmd_push= "git push"
 os.system(cmd_push)

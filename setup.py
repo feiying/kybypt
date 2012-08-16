@@ -11,8 +11,10 @@ setup(name='kybypt',
 		license='LGPLv2',
 		py_Modules=['kybypt'],
 		#packages=['kybypt'],
-		package_dir={'checking-github-update':'src/checking-github-update.py'},
-		data_files=[('/usr/share/kybypt/doc', ['docs/Generating-SSH-Keys_github-help.pdf'])]
+		#package_dir={'checking-github-update':'src/checking-github-update.py'},
+		data_files=[('/usr/share/kybypt/doc', ['docs/Generating-SSH-Keys_github-help.pdf']),
+		('/usr/bin/', ['src/checking-github-update.py']),
+		('/usr/bin/', ['src/init-github-repo.py'])],
 		#glob.glob(os.path.join('*.py')),
         #os.path.listdir(os.path.join('*.py'))
 		)

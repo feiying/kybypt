@@ -14,7 +14,8 @@ setup(name='kybypt',
 		#package_dir={'checking-github-update':'src/checking-github-update.py'},
 		data_files=[('/usr/share/kybypt/doc', ['docs/Generating-SSH-Keys_github-help.pdf']),
 		('/usr/bin/', ['src/checking-github-update.py']),
-		('/usr/bin/', ['src/init-github-repo.py'])],
+		('/usr/bin/', ['src/init-github-repo.py']),
+		('/usr/bin/', ['src/uncompress-srpm.sh'])],
 		#glob.glob(os.path.join('*.py')),
         #os.path.listdir(os.path.join('*.py'))
 		)

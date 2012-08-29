@@ -2,3 +2,4 @@ setup.py
 docs/Generating-SSH-Keys_github-help.pdf
 src/checking-github-update.py
 src/init-github-repo.py
+src/uncompress-srpm.sh
